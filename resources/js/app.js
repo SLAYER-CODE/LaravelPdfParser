@@ -6,7 +6,10 @@
 
 import './bootstrap';
 import { createApp } from 'vue';
-
+import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
  * registering components with the application instance so they are ready
@@ -36,4 +39,10 @@ app.component('example-component', ExampleComponent);
  * scaffolding. Otherwise, you will need to add an element yourself.
  */
 
-app.mount('#app');
+//Implemente vuetify
+const vuetify = createVuetify({
+    components,
+    directives,
+  })
+  
+app.use(vuetify).mount('#app');
