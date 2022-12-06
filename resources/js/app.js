@@ -8,8 +8,12 @@ import './bootstrap';
 import { createApp } from 'vue';
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
+import { aliases, mdi } from 'vuetify/iconsets/mdi'
+
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
+
+
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
  * registering components with the application instance so they are ready
@@ -18,8 +22,9 @@ import * as directives from 'vuetify/directives'
 
 const app = createApp({});
 
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
+// import ExampleComponent from './components/ButtonComponenet.vue';
+import App from './app.vue';
+app.component('aplication-component', App);
 
 /**
  * The following block of code may be used to automatically register your
@@ -43,6 +48,17 @@ app.component('example-component', ExampleComponent);
 const vuetify = createVuetify({
     components,
     directives,
+    ssr:true,
+    theme:{
+      defaultTheme:'dark'
+    },
+    icons:{
+      defaultSet:'mdi',
+      aliases,
+      sets:{
+        mdi      
+      }
+    }
   })
   
 app.use(vuetify).mount('#app');

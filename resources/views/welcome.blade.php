@@ -5,9 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PPDF search text</title>
-    <!-- Fonts -->
-    {{-- <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"> --}}
-    <script src="{{ mix('/js/app.js') }}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    @vite('resources/js/app.js')
 </head>
 
 <body class="antialiased">
@@ -28,10 +27,10 @@
             </div>
         @endif
     </div>
-
     <div id="app">
-        <example-component></example-component>
+        <aplication-component></aplication-component>
     </div>
+    {{-- Importando datos con vite desde el resource --}}
 </body>
 
 </html>
