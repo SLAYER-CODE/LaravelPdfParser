@@ -19,7 +19,7 @@
         "vue": "^3.2.45"
     },
     "dependencies": {
-        "material-design-icons-iconfont": "^6.7.0",
+        "@mdi/font": "^7.0.96",
         "vuetify": "^3.0.3"
     }
 }

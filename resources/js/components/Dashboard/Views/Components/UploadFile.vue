@@ -8,19 +8,9 @@
             </div>
         </div>
 
-        <v-row justify="center" align="baseline" >
-            <v-col cols="8" >
-                <v-file-input accept=".pdf" show-size label="Insert File" @change="selectFile" ></v-file-input>
-            </v-col>
+        <ComponentUploadPdf type="{{new}} ">
 
-            <v-col cols="4" class="pl-2">
-                <v-btn variant="outlined" color="success" dark small @click="upload">
-                    <strong> Upload</strong>
-                    <v-icon class="mx-2" right dark>mdi-cloud-upload</v-icon>
-                </v-btn>
-            </v-col>
-        </v-row>
-
+        </ComponentUploadPdf>
         <v-alert variant="outlined" type="warning" v-if="message" :dismisible="true" >
             {{ message }}
         </v-alert>
@@ -38,6 +28,8 @@
     </div>
 </template>
 <script>
+
+import ComponentUploadPdf from './ComponentUploadPdf.vue';
 export default {
     name: "upload-files",
     data() {
@@ -61,6 +53,8 @@ export default {
             this.message = "";
             //Aca dentro va el codigo que ejecuta el contralador para enviar el texto y convertirlo
         }
+    },components:{
+        ComponentUploadPdf
     }
 }
 </script>

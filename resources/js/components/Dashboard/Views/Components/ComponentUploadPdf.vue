@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>{{typeFile}}</h1>
+        <h1>{{ type.type.name }}</h1>
         <v-row justify="center" align="baseline">
             <v-col cols="8">
                 <v-file-input accept=".pdf" show-size label="Insert File" @change="selectFile"></v-file-input>
@@ -17,12 +17,12 @@
 </template>
 
 <script>
-
-export default {
-    propos: {
-        typeFile:String,
-            
+    export default {
+        props: {
+            mutipleFile:Boolean,
+            icons:Boolean,
+            showList:Boolean,
+            type:TypeUpload
+        }
     }
-}
-
 </script>

@@ -12,8 +12,8 @@
 
 <script>
 
-import ButtonComponenetVue from './components/ButtonComponenet.vue';
-import UploadFileVue from './components/UploadFile.vue';
+import ButtonComponenetVue from './components/Dashboard/Views/Components/ButtonComponenet.vue';
+import UploadFileVue from './components/Dashboard/Views/Components/UploadFile.vue';
 export default {
     name: "App",
     components: {

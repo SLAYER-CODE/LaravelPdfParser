@@ -24,6 +24,8 @@ const app = createApp({});
 
 // import ExampleComponent from './components/ButtonComponenet.vue';
 import App from './app.vue';
+import '@mdi/font/css/materialdesignicons.min.css'
+
 app.component('aplication-component', App);
 
 /**
@@ -51,14 +53,9 @@ const vuetify = createVuetify({
     ssr:true,
     theme:{
       defaultTheme:'dark'
-    },
-    icons:{
-      defaultSet:'mdi',
-      aliases,
-      sets:{
-        mdi      
-      }
+    },icons:{
+      iconFont:'md'
     }
   })
-  
+
 app.use(vuetify).mount('#app');
