@@ -8,9 +8,10 @@
             </div>
         </div>
 
-        <ComponentUploadPdf type="{{new}} ">
-
+        <ComponentUploadPdf :typeLoad="typeUpload" icons multipleFile> 
+        
         </ComponentUploadPdf>
+
         <v-alert variant="outlined" type="warning" v-if="message" :dismisible="true" >
             {{ message }}
         </v-alert>
@@ -27,17 +28,26 @@
         </v-card>
     </div>
 </template>
+
 <script>
 
 import ComponentUploadPdf from './ComponentUploadPdf.vue';
+import TypeUpload,{FileUploadTypeComponent} from '../../../Utils/TypeUpload.js';
+
+var FileUpload=new FileUploadTypeComponent();
+var TypeDefinend = new TypeUpload(FileUpload);
+
 export default {
+
+    
     name: "upload-files",
     data() {
         return {
             currentFile: undefined,
             progress: 0,
             message: "",
-            fileInfos: []
+            fileInfos: [],
+            typeUpload:TypeDefinend
         }
     },
     methods: {

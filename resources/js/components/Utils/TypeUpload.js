@@ -1,13 +1,14 @@
 /* 
 *@class
 */
-class TypeUpload{   
-   constructor(type=FolderUploadTypeComponent|FileUploadTypeComponent){
-    this.type = p.type;
+export default class TypeUpload{   
+   constructor(type){
+    this.type = type;
    }
 }
+/* Clases de intineracion de Subida de componentes */
 
-class FolderUploadTypeComponent{
+export class FolderUploadTypeComponent{
     constructor(ext = 'pdf',recurisve = false,limit=null,order=0,crypt=false,fingerprint=false ){
         this.ext=ext;
         this.recurisve=recurisve
@@ -16,15 +17,19 @@ class FolderUploadTypeComponent{
         this.crypt=crypt
         this.fingerprint=fingerprint
         this.name="Folder Upload"
+        this.prepend="mdi-folder"
     }
 }
 
-class FileUploadTypeComponent{
+/* Clases de Type componente */
+
+export class FileUploadTypeComponent{
     constructor(ext= 'pdf',crypt=false,fingerprint=false){
         this.ext=ext
         this.crypt=crypt
         this.fingerprint=fingerprint        
         this.name="File Upload"
+        this.prepend="mdi-file"
     }
 }
 

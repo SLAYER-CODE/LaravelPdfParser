@@ -5,7 +5,9 @@
             <div class="mb-5">
                 <ButtonComponenetVue></ButtonComponenetVue>
             </div>
-            <UploadFileVue></UploadFileVue>
+            <UploadFileVue>
+
+            </UploadFileVue>
         </v-container>
     </v-app>
 </template>
@@ -14,6 +16,7 @@
 
 import ButtonComponenetVue from './components/Dashboard/Views/Components/ButtonComponenet.vue';
 import UploadFileVue from './components/Dashboard/Views/Components/UploadFile.vue';
+
 export default {
     name: "App",
     components: {

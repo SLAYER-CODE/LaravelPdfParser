@@ -25,9 +25,7 @@ const app = createApp({});
 // import ExampleComponent from './components/ButtonComponenet.vue';
 import App from './app.vue';
 import '@mdi/font/css/materialdesignicons.min.css'
-
 app.component('aplication-component', App);
-
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

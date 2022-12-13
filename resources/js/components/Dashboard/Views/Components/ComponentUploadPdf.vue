@@ -1,28 +1,41 @@
 <template>
     <div>
-        <h1>{{ type.type.name }}</h1>
+        <p> {{ typeLoad.type.name }}</p>
+        
         <v-row justify="center" align="baseline">
+
             <v-col cols="8">
-                <v-file-input accept=".pdf" show-size label="Insert File" @change="selectFile"></v-file-input>
+                <v-file-input  :chips='typeLoad.type.multipleFile' :multiple=true :prepend-icon="typeLoad.type.prepend" :accept="typeLoad.type.ext" show-size label="Insert File" @change="selectFile"></v-file-input>
             </v-col>
 
             <v-col cols="4" class="pl-2">
                 <v-btn variant="outlined" color="success" dark small @click="upload">
                     <strong> Upload</strong>
-                    <v-icon class="mx-2" right dark>mdi-cloud-upload</v-icon>
+                    <v-icon v-if="icons" class="mx-2" right dark>mdi-cloud-upload</v-icon>
                 </v-btn>
             </v-col>
+
         </v-row>
     </div>
 </template>
 
 <script>
+import TypeUpload,{FolderUploadTypeComponent} from '../../../Utils/TypeUpload.js';
+
     export default {
         props: {
-            mutipleFile:Boolean,
+            c:Boolean,
             icons:Boolean,
             showList:Boolean,
-            type:TypeUpload
+            typeLoad:{
+                type : TypeUpload,
+                required :true,
+                default(){
+                    return new TypeUpload(new FolderUploadTypeComponent())
+                }
+            }
         }
     }
+    
+    
 </script>
